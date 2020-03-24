@@ -3,10 +3,14 @@
     padding: 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background: #000;
     width: 100vw;
-    overflow-x:hidden;
+    position: relative;
 }
 
 .pointer {
@@ -148,8 +152,7 @@ h1 {
     position: fixed;
     right: 25px;
     top: 30px;
-    width: 4%;
-    max-width: 25px;
+    width: 25px;
     z-index: 9;
     transition: 0.5s;
 }
