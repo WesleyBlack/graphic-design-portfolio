@@ -16,16 +16,15 @@
    
     <!-- Nav -->
     <nav>
-      <a href="#" class="nav-icon" id="nav-flipper">
-         <div class="nav-ball"></div>
-         <img src="images/icons/logo.svg" alt="Logo" class="nav-logo">
-      </a>
-      
       <div class="side-nav" id="side-nav">
           <div onclick="toggleMenu()" class="toggle-menu" id="toggle-menu">
               <img src="images/icons/menu.svg" alt="Menu" class="menu-button hover pointer" id="menu-button">
               <img src="images/icons/close.svg" alt="Close" class="menu-close hover pointer" id="menu-close">
           </div>
+          <a href="#" class="nav-icon" id="nav-flipper">
+              <div class="nav-ball"></div>
+              <img src="images/icons/logo.svg" alt="Logo" class="nav-logo">
+          </a>
           <div class="links" id="links">
               <a href="index.html" class="active">Home</a>
               <a href="#">About</a>
@@ -150,7 +149,7 @@
             || window.mozRequestAnimationFrame
             || window.webkitRequestAnimationFrame
             || window.msRequestAnimationFrame
-            || function(f){return setTimeout(f, 1000/60)} // simulate calling code 60 
+            || function(f){return setTimeout(f, 1000/60)}
         
         function positionTheDot() {
             // Percentage down the Page
