@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700;900&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+<!--    <div class="test"></div>-->
+
+ <div id="wrapper">
+  <div id="box"></div>
+   
+    <!-- Nav -->
+    <nav>
+      <a href="#" class="nav-icon" id="nav-flipper">
+         <div class="nav-ball"></div>
+         <img src="images/icons/logo.svg" alt="Logo" class="nav-logo">
+      </a>
+      
+      <div class="side-nav" id="side-nav">
+          <div onclick="toggleMenu()" class="toggle-menu" id="toggle-menu">
+              <img src="images/icons/menu.svg" alt="Menu" class="menu-button hover pointer" id="menu-button">
+              <img src="images/icons/close.svg" alt="Close" class="menu-close hover pointer" id="menu-close">
+          </div>
+          <div class="links" id="links">
+              <a href="index.html" class="active">Home</a>
+              <a href="#">About</a>
+              <a href="#">Portfolio</a>
+              <a href="#">Contact</a>
+          </div>
+      </div>
+      
+      <img onclick="editPath()" src="images/icons/edit-path.svg" alt="Edit" class="edit-path hover pointer">
+    </nav>
+    <!-- SVG Path -->
+    <div id="rail-container">
+        <svg class="rail" width="100%" height="100%">
+	        <path d="M 0,0 C 0,0 0,0 0,0" id="rail-path" />
+	        <line id="path1" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path2" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path3" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path4" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path5" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path6" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path7" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path8" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path9" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path10" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path11" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path12" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path13" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+            <line id="path14" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
+        </svg>
+        <!-- SVG Points -->
+        <div class="points" id="point-container">
+            <div class="point" id="pt1"></div>
+            
+            <div class="handle" id="c1"></div>
+            <div class="handle" id="c2"></div>
+            <div class="point" id="pt2"></div>
+            
+            <div class="handle" id="c3"></div>
+            <div class="handle" id="c4"></div>
+            <div class="point" id="pt3"></div>
+            
+            <div class="handle" id="c5"></div>
+            <div class="handle" id="c6"></div>
+            <div class="point" id="pt4"></div>
+            
+            <div class="handle" id="c7"></div>
+            <div class="handle" id="c8"></div>
+            <div class="point" id="pt5"></div>
+            
+            <div class="handle" id="c9"></div>
+            <div class="handle" id="c10"></div>
+            <div class="point" id="pt6"></div>
+            
+            <div class="handle" id="c11"></div>
+            <div class="handle" id="c12"></div>
+            <div class="point" id="pt7"></div>
+            
+            <div class="handle" id="c13"></div>
+            <div class="handle" id="c14"></div>
+            <div class="point" id="pt8"></div>
+        </div>
+     </div>
+     
+     <!-- Colour Logo/Ball -->
+     <div class="section">
+         <div class="flipper" id="flipper">
+           <div class="content" id="content">
+               <div class="logo">
+                   <div class="clipped">
+                       <div class="scale-up">
+                           <img class="spin" src="images/gradients/gradient-blur.jpg" alt="gradient">
+                       </div>
+                   </div>
+                   <svg width="0" height="0" viewBox="0 0 1 1">
+                        <clipPath id="clip" clipPathUnits="objectBoundingBox">
+                        <path d="M0.2668 0.822882H0.73157C0.730105 0.810968 0.729226 0.79632 0.728738 0.77923C0.728445 0.768976 0.728249 0.758038 0.728249 0.746417V0.681085C0.708717 0.672101 0.694849 0.6638 0.691626 0.658136L0.728249 0.624835V0.561066C0.728249 0.548273 0.728445 0.538214 0.728738 0.529034C0.729128 0.518488 0.729812 0.509015 0.730984 0.497882C0.711549 0.50003 0.693189 0.500616 0.667211 0.500616H0.331061C0.304498 0.500616 0.286723 0.50003 0.267289 0.497882C0.269535 0.519366 0.270023 0.535577 0.270023 0.561066V0.746417C0.270023 0.781769 0.268851 0.803448 0.2668 0.822882ZM0.380966 0.586554H0.619064V0.618585H0.380966V0.586554ZM0.380966 0.695343H0.619064V0.73089H0.380966V0.695343ZM0.803937 0.371613V0.468292H0.195898V0.371613C0.203418 0.372394 0.211134 0.373077 0.219435 0.373468V0.295929C0.219435 0.272882 0.21797 0.249054 0.215919 0.225812H0.333698C0.33155 0.246124 0.330866 0.262238 0.330866 0.295245V0.374445H0.442493V0.255206C0.442493 0.228644 0.441028 0.202667 0.43761 0.178839H0.561053C0.557538 0.203351 0.556073 0.227863 0.556073 0.255206V0.374542H0.669164V0.294171C0.669164 0.269073 0.667699 0.24798 0.665649 0.225519H0.784112C0.781963 0.250128 0.780693 0.271808 0.780693 0.294952V0.37337C0.788799 0.37298 0.796319 0.372394 0.803937 0.371613ZM0.532634 0.422589C0.532634 0.441046 0.517692 0.456085 0.499136 0.456085C0.480678 0.456085 0.465639 0.441144 0.465639 0.422589C0.465639 0.404132 0.480581 0.389093 0.499136 0.389093C0.517692 0.389093 0.532634 0.404132 0.532634 0.422589Z"/>
+                        </clipPath>
+                </svg>
+            </div>
+            <div class="ball" id="ball">
+                <img class="spin" src="images/gradients/twisted-gradient-blur.jpg" alt="gradient">
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!-- Identities Section -->
+    <div class="flex-start">
+        <div class="relative">
+            <img src="images/homepage/branding-2.jpg" alt="identities" class="identities bw1" id="identities">
+        </div>
+        <div class="section-type">
+            <h1>Identities</h1>
+        </div>
+    </div>
+    
+    <!-- Web Design Section -->
+    <div class="flex-end">
+        <div class="section-type">
+            <h1>Web Design</h1>
+        </div>
+        <div class="relative">
+            <img src="images/homepage/web-design.jpg" alt="web" class="identities bw2" id="web">
+        </div>
+    </div>
+    
+    <!-- Other -->
+    <div class="flex-start">
+        <div class="relative">
+            <img src="images/homepage/book.jpg" alt="other" class="identities bw2" id="offfge">
+        </div>
+        <div class="section-type">
+            <h1>And More</h1>
+        </div>
+    </div>
+    
+</div>
+    
+    <script>
+        
+        function positionTheDot() {
+            // Percentage down the Page
+            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+
+            // Path Length
+            var path = document.getElementById("rail-path");
+            var pathLen = path.getTotalLength();
+  
+            // Set Position of <scrollPercentage> Along the Path
+            var pt = path.getPointAtLength(scrollPercentage * pathLen);
+  
+            // Position the Dot at this Point
+            var dot = document.getElementById("flipper");
+            dot.style.transform=("translate("+ pt.x + "px ," + pt.y + "px)");
+        };
+        
+        // Logo/Ball Flipper
+        var intersectionOptions = {
+            root: null,  // use the viewport
+            rootMargin: '0px',
+            threshold: 1.0
+        }
+//        var intersectionElement = document.getElementById('content');
+        var intersectionElement = [
+            { container: 'content', class1: 'rsd', class2: 'brsd'},
+            { container: 'nav-flipper', class1: 'rd', class2: 'brd'}
+        ]
+        
+            // Change Class Based on Target's Visibility
+        function intersectionCallback(entries, observer) {
+            entries.forEach(entry => {
+            if (entry.intersectionRatio >= 1) {
+                for (var i= 0; i < intersectionElement.length; i++) {
+                    if (document.getElementById(intersectionElement[i].container).classList.contains(intersectionElement[i].class1)) {
+                        document.getElementById(intersectionElement[i].container).classList.remove(intersectionElement[i].class1);
+                        document.getElementById(intersectionElement[i].container).style.animation = 'none';
+                        document.getElementById(intersectionElement[i].container).offsetHeight;
+                        document.getElementById(intersectionElement[i].container).style.animation = null; 
+                        document.getElementById(intersectionElement[i].container).classList.add(intersectionElement[i].class2);
+                    } 
+                } 
+            } else {
+                for (var i= 0; i < intersectionElement.length; i++) {
+                    document.getElementById(intersectionElement[i].container).classList.remove(intersectionElement[i].class2);
+                    document.getElementById(intersectionElement[i].container).style.animation = 'none';
+                    document.getElementById(intersectionElement[i].container).offsetHeight;
+                    document.getElementById(intersectionElement[i].container).style.animation = null;
+                    document.getElementById(intersectionElement[i].container).classList.add(intersectionElement[i].class1);
+                }
+            }
+          });
+        }
+
+        var observer = new IntersectionObserver(intersectionCallback, intersectionOptions);
+        var target = document.querySelector('#box');
+        observer.observe(target);
+        
+        // Menu Toggle
+        var open = false;
+        var tabletMode = window.matchMedia("(max-width: 937px)");
+        var menuButton = document.getElementById('toggle-menu');
+        function toggleMenu() {
+            open = !open;
+            if (tabletMode.matches) {
+                if (open) {
+                    document.getElementById('side-nav').style.height = '350px';
+                    menuButton.classList.remove('brl');
+                    menuButton.style.animation = 'none';
+                    menuButton.offsetHeight;
+                    menuButton.style.animation = null; 
+                    menuButton.classList.add('rl');
+                } else {
+                    document.getElementById('side-nav').style.height = '65px';
+                    menuButton.classList.remove('rl');
+                    menuButton.style.animation = 'none';
+                    menuButton.offsetHeight;
+                    menuButton.style.animation = null; 
+                    menuButton.classList.add('brl');
+                } 
+            } else {
+                if (open) {
+                    document.getElementById('side-nav').style.width = '200px';
+                    menuButton.style.right = '25px';
+                    menuButton.classList.remove('brl');
+                    menuButton.style.animation = 'none';
+                    menuButton.offsetHeight;
+                    menuButton.style.animation = null; 
+                    menuButton.classList.add('rl');
+                } else {
+                    document.getElementById('side-nav').style.width = '0px';
+                    menuButton.style.right = '-50px';
+                    menuButton.classList.remove('rl');
+                    menuButton.style.animation = 'none';
+                    menuButton.offsetHeight;
+                    menuButton.style.animation = null; 
+                    menuButton.classList.add('brl');
+                }
+            }
+        };
+        
+        // Toggle Nav Between Desktop and Mobile
+        function navToggle() {
+             if (tabletMode.matches) {
+                 document.getElementById('side-nav').style.height = '65px';
+                 document.getElementById('side-nav').style.width = '100%';
+                 menuButton.style.right = 'auto';
+            } else {
+                document.getElementById('side-nav').style.height = '100%';
+                document.getElementById('side-nav').style.width = '0px';
+                menuButton.style.right = '-50px';
+            }
+        };
+        
+        // Collision Detection
+        function isCollide() {
+            var aRect = document.getElementById('ball').getBoundingClientRect();
+            var bRect = [
+                { pos: 'identities', cla: 'bw1'},
+                { pos: 'web', cla: 'bw2'},
+                { pos: 'offfge', cla: 'bw2'}
+            ];
+
+            for (var i= 0; i < bRect.length; i++) {
+                if (
+                    ((aRect.top + aRect.height) < (document.getElementById(bRect[i].pos).getBoundingClientRect().top)) ||
+                    (aRect.top > (document.getElementById(bRect[i].pos).getBoundingClientRect().top + document.getElementById(bRect[i].pos).getBoundingClientRect().height)) ||
+                    ((aRect.left + aRect.width) < document.getElementById(bRect[i].pos).getBoundingClientRect().left) ||
+                    (aRect.left > (document.getElementById(bRect[i].pos).getBoundingClientRect().left + document.getElementById(bRect[i].pos).getBoundingClientRect().width)) //Checks if Elements are not touching
+                ) {
+                    document.getElementById(bRect[i].pos).classList.add(bRect[i].cla);
+                } else {
+                    if (document.getElementById(bRect[i].pos).classList.contains(bRect[i].cla)) {
+                        document.getElementById(bRect[i].pos).classList.remove(bRect[i].cla);
+                    }
+                }
+            }
+        };
+       
+       // Draws SVG Based off Div Positions
+       function drawSVG() {
+           var pt1 = document.getElementById('pt1').getBoundingClientRect();
+           var points = [
+                { c1: 'c1', c2: 'c2', pt2: 'pt2' },
+                { c1: 'c3', c2: 'c4', pt2: 'pt3' },
+                { c1: 'c5', c2: 'c6', pt2: 'pt4' },
+                { c1: 'c7', c2: 'c8', pt2: 'pt5' },
+                { c1: 'c9', c2: 'c10', pt2: 'pt6' },
+                { c1: 'c11', c2: 'c12', pt2: 'pt7' },
+                { c1: 'c13', c2: 'c14', pt2: 'pt8' }
+            ];
+           
+           var pointsOutput = " ";
+           for (var i = 0; i < points.length; i++) {
+               pointsOutput += ' C'+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].c1).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].c1).getBoundingClientRect().top + window.pageYOffset))+' '+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].c2).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].c2).getBoundingClientRect().top + window.pageYOffset))+' '+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].pt2).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].pt2).getBoundingClientRect().top + window.pageYOffset))
+           }
+           
+           document.getElementById('rail-path').setAttribute('d', 'M'+((pt1.width / 2) + (pt1.left + window.pageXOffset))+','+((pt1.height / 2) + (pt1.top + window.pageYOffset))+pointsOutput);
+        };
+
+        // Update dot position when we get a scroll event.
+        window.addEventListener("scroll", () => {
+            positionTheDot(); 
+            isCollide();
+            if (open) { toggleMenu(); }
+        });
+
+        // Update dot position when we get a resize event.
+        window.addEventListener("resize", () => {
+            drawSVG();
+            positionTheDot();
+            isCollide();
+            navToggle();
+            if (open) { toggleMenu(); }
+        });
+        
+        // Set the initial position of the dot.
+        drawSVG();
+        positionTheDot();
+//        window.addEventListener('load', function () {
+//            drawSVG();
+//            positionTheDot();
+//        })
+        
+        // Draws Connecting Lines Between Points and Handles 
+        function drawLines() {
+        var pathHandles = [
+                { c1: 'c1', pt1: 'pt1' },
+                { c1: 'c2', pt1: 'pt2' },
+                { c1: 'c3', pt1: 'pt2' },
+                { c1: 'c4', pt1: 'pt3' },
+                { c1: 'c5', pt1: 'pt3' },
+                { c1: 'c6', pt1: 'pt4' },
+                { c1: 'c7', pt1: 'pt4' },
+                { c1: 'c8', pt1: 'pt5' },
+                { c1: 'c9', pt1: 'pt5' },
+                { c1: 'c10', pt1: 'pt6' },
+                { c1: 'c11', pt1: 'pt6' },
+                { c1: 'c12', pt1: 'pt7' },
+                { c1: 'c13', pt1: 'pt7' },
+                { c1: 'c14', pt1: 'pt8' }
+            ];
+        for (var i = 0; i < pathHandles.length; i++) {
+            document.getElementById('path'+(i+1)).setAttribute('x1', (document.getElementById(pathHandles[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(pathHandles[i].c1).getBoundingClientRect().left + window.pageXOffset));
+            document.getElementById('path'+(i+1)).setAttribute('y1', (document.getElementById(pathHandles[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(pathHandles[i].c1).getBoundingClientRect().top + window.pageYOffset));
+            document.getElementById('path'+(i+1)).setAttribute('x2', (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().width / 2) + (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().left + window.pageXOffset));
+            document.getElementById('path'+(i+1)).setAttribute('y2', (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().height / 2) + (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().top + window.pageYOffset));
+            }
+        };
+        
+        // Drag Points
+        var selected = null, // Object of the element to be moved
+        x_pos = 0, y_pos = 0, // Stores x & y coordinates of the mouse pointer
+        x_elem = 0, y_elem = 0; // Stores top, left values (edge) of the element
+
+            // Start of Element Dragging
+        function _drag_init(elem) {
+            selected = elem;
+            x_elem = x_pos - selected.offsetLeft;
+            y_elem = y_pos - selected.offsetTop;
+        }
+
+            // Element Dragging
+        function _move_elem(e) {
+            var bounds = document.getElementById("wrapper").getBoundingClientRect();
+            var boundsPadding = document.body.getBoundingClientRect();
+            x_pos = document.all ? window.event.clientX : e.pageX;
+            y_pos = e.pageY;
+            if (selected !== null) {
+                selected.style.left = ((x_pos - bounds.left - (0.08 * boundsPadding.width)) / (bounds.width - (0.16 * boundsPadding.width)) * 100) + '%';
+                selected.style.top = ((y_pos/window.innerHeight)*100) + 'vh';
+                drawSVG();
+                positionTheDot();
+                drawLines();
+            }
+        }
+
+            // Destroy the Object
+        function _destroy() {
+            selected = null;
+        }
+
+            // Bind the Functions
+        var anchors = ['c1','pt1','c2','pt2','c3','c4','pt3','c5','c6','pt4','c7','c8','pt5','c9','c10','pt6','c11','c12','pt7','c13','c14','pt8'];
+        for (var i = 0; i < anchors.length; i++) {
+            document.getElementById(anchors[i]).onmousedown = function () {
+                _drag_init(this);
+                return false;
+            }
+        };
+
+        // Toggle Edit Mode
+        var edit = false;
+        function editPath() {
+            edit = !edit;
+            selected = null;
+            if (edit) {
+                document.getElementById('rail-container').style.visibility='visible';
+                document.onmousemove = _move_elem;
+                document.onmouseup = _destroy;
+                drawLines();
+                window.addEventListener('resize', drawLines);
+            } else {
+                document.getElementById('rail-container').style.visibility='hidden';
+                document.onmousemove = null;
+                window.removeEventListener('resize', drawLines);
+            }
+        };
+    </script>
+
+</body>
+</html>
