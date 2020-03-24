@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Test</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-copy.css">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700;900&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -158,7 +159,7 @@
   
             // Position the Dot at this Point
             var dot = document.getElementById("flipper");
-            dot.style.transform=("translate("+ pt.x + "px ," + pt.y + "px)");
+            dot.style.transform=("translate3d("+ pt.x + "px ," + pt.y + "px, 0px)");
         };
         
         // Logo/Ball Flipper
