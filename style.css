@@ -3,14 +3,19 @@
     padding: 0;
 }
 
+/*
 html, body {
     overflow-x: hidden;
+    width: 100vw;
 }
+*/
 
 body {
     background: #000;
+/*
     width: 100vw;
     position: relative;
+*/
 }
 
 .pointer {
@@ -295,6 +300,7 @@ h1 {
     height: 20vh;
     z-index: 3;
     pointer-events: none;
+    transition: 0.1s ease-out;
 } 
 
 .content {

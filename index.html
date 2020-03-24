@@ -146,6 +146,12 @@
     
     <script>
         
+        window.requestAnimationFrame = window.requestAnimationFrame
+            || window.mozRequestAnimationFrame
+            || window.webkitRequestAnimationFrame
+            || window.msRequestAnimationFrame
+            || function(f){return setTimeout(f, 1000/60)} // simulate calling code 60 
+        
         function positionTheDot() {
             // Percentage down the Page
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
@@ -307,23 +313,23 @@
 
         // Update dot position when we get a scroll event.
         window.addEventListener("scroll", () => {
-            positionTheDot(); 
-            isCollide();
+            requestAnimationFrame(positionTheDot);
+            requestAnimationFrame(isCollide);
             if (open) { toggleMenu(); }
         });
 
         // Update dot position when we get a resize event.
         window.addEventListener("resize", () => {
-            drawSVG();
-            positionTheDot();
-            isCollide();
-            navToggle();
+            requestAnimationFrame(drawSVG);
+            requestAnimationFrame(positionTheDot);
+            requestAnimationFrame(isCollide);
+            requestAnimationFrame(navToggle);
             if (open) { toggleMenu(); }
         });
         
         // Set the initial position of the dot.
-        drawSVG();
-        positionTheDot();
+        requestAnimationFrame(drawSVG);
+        requestAnimationFrame(positionTheDot);
 //        window.addEventListener('load', function () {
 //            drawSVG();
 //            positionTheDot();
