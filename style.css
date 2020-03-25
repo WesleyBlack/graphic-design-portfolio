@@ -406,7 +406,7 @@ h1 {
 
 /****** Media Queries ******/
 @media screen and (max-width: 937px) {
-    body {
+    html, body {
        overflow-x: hidden;
     }
     
@@ -460,7 +460,6 @@ h1 {
         margin: 0 0;
         transform-origin: right bottom;
         transform: rotate(-90deg);
-        overflow-x: hidden;
     }
     
     h1 {
