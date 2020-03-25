@@ -135,7 +135,7 @@
     <!-- Other -->
     <div class="flex-start">
         <div class="relative">
-            <img src="images/homepage/book.jpg" alt="other" class="identities bw2" id="offfge">
+            <img src="images/homepage/shirt-r.jpg" alt="other" class="identities bw3" id="offfge">
         </div>
         <div class="section-type">
             <h1>And More</h1>
@@ -153,10 +153,10 @@
             || function(f){return setTimeout(f, 1000/60)}
         
         var dot = document.getElementById('flipper');
-        
+    
         function positionTheDot() {
             // Percentage down the Page
-            var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+            var scrollPercentage = (document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
             // Path Length
             var path = document.getElementById('rail-path');
@@ -164,9 +164,11 @@
   
             // Set Position of <scrollPercentage> Along the Path
             var pt = path.getPointAtLength(scrollPercentage * pathLen);
+            
+            var pty = pt.y - document.documentElement.scrollTop;
   
             // Position the Dot at this Point
-            dot.style.transform=('translate3d('+ pt.x + 'px ,' + pt.y + 'px, 0px)');
+            dot.style.webkitTransform=('translate('+ pt.x + 'px , ' + pty + 'px');
         };
         
         // Logo/Ball Flipper
@@ -175,7 +177,6 @@
             rootMargin: '0px',
             threshold: 1.0
         }
-//        var intersectionElement = document.getElementById('content');
         var intersectionElement = [
             { container: 'content', class1: 'rsd', class2: 'brsd'},
             { container: 'nav-flipper', class1: 'rd', class2: 'brd'}
@@ -272,7 +273,7 @@
             var bRect = [
                 { pos: 'identities', cla: 'bw1'},
                 { pos: 'web', cla: 'bw2'},
-                { pos: 'offfge', cla: 'bw2'}
+                { pos: 'offfge', cla: 'bw3'}
             ];
 
             for (var i= 0; i < bRect.length; i++) {
@@ -316,7 +317,7 @@
         window.addEventListener("scroll", () => {
             requestAnimationFrame(positionTheDot);
             requestAnimationFrame(isCollide);
-            dot.style.transition=('0.1s ease-out');
+            dot.style.transition=('100ms ease-out');
             if (open) { toggleMenu(); }
         });
 
