@@ -417,6 +417,21 @@ h1 {
        overflow-x: hidden !important;
     }
     
+        #c2 { position: absolute; left: 100%; top: 105vh; }
+        #pt2 { position: absolute; left: 85%; top: 90vh; }
+        #c3 { position: absolute; left: 70%; top: 75vh; }
+    
+        #c8 { position: absolute; left: 20%; top: 175vh; }
+        #pt5 { position: absolute; left: 50%; top: 175vh; }
+        #c9 { position: absolute; left: 80%; top: 175vh; }
+    
+        #c12 { position: absolute; left: 0%; top: 325vh; }
+        #pt7 { position: absolute; left: 25%; top: 300vh; }
+        #c13 { position: absolute; left: 50%; top: 275vh; }
+    
+        #c14 { position: absolute; left: 60%; top: 325vh; }
+        #pt8 { position: absolute; left: 5%; top: 355vh; }
+    
     .nav-icon {
         left: calc(50vw - 12.5px);
         top: 20px;
@@ -467,10 +482,6 @@ h1 {
         margin: 0 0;
         transform-origin: right bottom;
         transform: rotate(-90deg);
-/*
-        overflow-x: hidden !important;
-        pointer-events: none;
-*/
     }
     
     h1 {
