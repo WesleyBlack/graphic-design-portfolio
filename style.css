@@ -413,11 +413,9 @@ h1 {
 
 /****** Media Queries ******/
 @media screen and (max-width: 937px) {
-/*
     html, body {
        overflow-x: hidden !important;
     }
-*/
     
     .nav-icon {
         left: calc(50vw - 12.5px);
@@ -469,8 +467,10 @@ h1 {
         margin: 0 0;
         transform-origin: right bottom;
         transform: rotate(-90deg);
+/*
         overflow-x: hidden !important;
         pointer-events: none;
+*/
     }
     
     h1 {
