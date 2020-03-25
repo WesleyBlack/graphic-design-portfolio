@@ -402,6 +402,10 @@
                 _drag_init(this);
                 return false;
             }
+            document.getElementById(anchors[i]).ontouchstart = function () {
+                _drag_init(this);
+                return false;
+            }
         };
 
         // Toggle Edit Mode
@@ -413,11 +417,14 @@
                 document.getElementById('rail-container').style.visibility='visible';
                 document.onmousemove = _move_elem;
                 document.onmouseup = _destroy;
+                document.ontouchmove = _move_elem;
+                document.ontouchend = _destroy;
                 drawLines();
                 window.addEventListener('resize', drawLines);
             } else {
                 document.getElementById('rail-container').style.visibility='hidden';
                 document.onmousemove = null;
+                document.ontouchmove = null;
                 window.removeEventListener('resize', drawLines);
             }
         };
