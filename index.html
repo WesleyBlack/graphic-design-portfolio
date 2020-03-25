@@ -35,6 +35,7 @@
       
       <img onclick="editPath()" src="images/icons/edit-path.svg" alt="Edit" class="edit-path hover pointer">
     </nav>
+    
     <!-- SVG Path -->
     <div id="rail-container">
         <svg class="rail" width="100%" height="100%">
@@ -151,20 +152,21 @@
             || window.msRequestAnimationFrame
             || function(f){return setTimeout(f, 1000/60)}
         
+        var dot = document.getElementById('flipper');
+        
         function positionTheDot() {
             // Percentage down the Page
             var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
             // Path Length
-            var path = document.getElementById("rail-path");
+            var path = document.getElementById('rail-path');
             var pathLen = path.getTotalLength();
   
             // Set Position of <scrollPercentage> Along the Path
             var pt = path.getPointAtLength(scrollPercentage * pathLen);
   
             // Position the Dot at this Point
-            var dot = document.getElementById("flipper");
-            dot.style.transform=("translate3d("+ pt.x + "px ," + pt.y + "px, 0px)");
+            dot.style.transform=('translate3d('+ pt.x + 'px ,' + pt.y + 'px, 0px)');
         };
         
         // Logo/Ball Flipper
@@ -314,6 +316,7 @@
         window.addEventListener("scroll", () => {
             requestAnimationFrame(positionTheDot);
             requestAnimationFrame(isCollide);
+            dot.style.transition=('0.1s ease-out');
             if (open) { toggleMenu(); }
         });
 
