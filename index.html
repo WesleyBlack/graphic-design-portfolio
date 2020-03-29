@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Test</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700;900&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;700;900&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-<!--    <div class="test"></div>-->
 
  <div id="wrapper">
   <div id="box"></div>
@@ -38,7 +36,7 @@
     
     <!-- SVG Path -->
     <div id="rail-container">
-        <svg class="rail" width="100%" height="100%">
+        <svg class="rail" id="rail" width="100%" height="100%">
 	        <path d="M 0,0 C 0,0 0,0 0,0" id="rail-path" />
 	        <line id="path1" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
             <line id="path2" x1="0" y1="0" x2="0" y2="0" class="handle-line" />
@@ -57,35 +55,14 @@
         </svg>
         <!-- SVG Points -->
         <div class="points" id="point-container">
-            <div class="point" id="pt1"></div>
-            
-            <div class="handle" id="c1"></div>
-            <div class="handle" id="c2"></div>
-            <div class="point" id="pt2"></div>
-            
-            <div class="handle" id="c3"></div>
-            <div class="handle" id="c4"></div>
-            <div class="point" id="pt3"></div>
-            
-            <div class="handle" id="c5"></div>
-            <div class="handle" id="c6"></div>
-            <div class="point" id="pt4"></div>
-            
-            <div class="handle" id="c7"></div>
-            <div class="handle" id="c8"></div>
-            <div class="point" id="pt5"></div>
-            
-            <div class="handle" id="c9"></div>
-            <div class="handle" id="c10"></div>
-            <div class="point" id="pt6"></div>
-            
-            <div class="handle" id="c11"></div>
-            <div class="handle" id="c12"></div>
-            <div class="point" id="pt7"></div>
-            
-            <div class="handle" id="c13"></div>
-            <div class="handle" id="c14"></div>
-            <div class="point" id="pt8"></div>
+            <div class="point" id="pt1"></div><div class="handle" id="c1"></div>
+            <div class="handle" id="c3"></div><div class="handle" id="c2"></div><div class="point" id="pt2"></div>
+            <div class="point" id="pt3"></div><div class="handle" id="c4"></div><div class="handle" id="c5"></div>
+            <div class="point" id="pt4"></div><div class="handle" id="c6"></div><div class="handle" id="c7"></div>
+            <div class="point" id="pt5"></div><div class="handle" id="c8"></div><div class="handle" id="c9"></div>
+            <div class="point" id="pt6"></div><div class="handle" id="c10"></div><div class="handle" id="c11"></div>
+            <div class="point" id="pt7"></div><div class="handle" id="c12"></div><div class="handle" id="c13"></div>
+            <div class="point" id="pt8"></div><div class="handle" id="c14"></div>
         </div>
      </div>
      
@@ -115,7 +92,7 @@
     <!-- Identities Section -->
     <div class="flex-start">
         <div class="relative">
-            <img src="images/homepage/branding-2.jpg" alt="identities" class="identities bw1" id="identities">
+            <img src="images/homepage/branding-2.jpg" alt="Identities" class="hp-section bw1" id="identities">
         </div>
         <div class="section-type">
             <h1>Identities</h1>
@@ -128,14 +105,14 @@
             <h1>Web Design</h1>
         </div>
         <div class="relative">
-            <img src="images/homepage/web-design.jpg" alt="web" class="identities bw2" id="web">
+            <img src="images/homepage/web-design.jpg" alt="Web Design" class="hp-section bw2" id="web">
         </div>
     </div>
     
     <!-- Other -->
     <div class="flex-start">
         <div class="relative">
-            <img src="images/homepage/shirt-r.jpg" alt="other" class="identities bw3" id="offfge">
+            <img src="images/homepage/shirt-r.jpg" alt="And More" class="hp-section bw3" id="more">
         </div>
         <div class="section-type">
             <h1>And More</h1>
@@ -144,292 +121,8 @@
     
 </div>
     
-    <script>
-        
-        window.requestAnimationFrame = window.requestAnimationFrame
-            || window.mozRequestAnimationFrame
-            || window.webkitRequestAnimationFrame
-            || window.msRequestAnimationFrame
-            || function(f){return setTimeout(f, 1000/60)}
-        
-        var dot = document.getElementById('flipper');
-    
-        function positionTheDot() {
-            // Percentage down the Page
-            var scrollPercentage = (document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-            // Path Length
-            var path = document.getElementById('rail-path');
-            var pathLen = path.getTotalLength();
-  
-            // Set Position of <scrollPercentage> Along the Path
-            var pt = path.getPointAtLength(scrollPercentage * pathLen);
-            
-            var pty = pt.y - document.documentElement.scrollTop;
-  
-            // Position the Dot at this Point
-            dot.style.webkitTransform=('translate('+ pt.x + 'px , ' + pty + 'px');
-        };
-        
-        // Logo/Ball Flipper
-        var intersectionOptions = {
-            root: null,  // use the viewport
-            rootMargin: '0px',
-            threshold: 1.0
-        }
-        var intersectionElement = [
-            { container: 'content', class1: 'rsd', class2: 'brsd'},
-            { container: 'nav-flipper', class1: 'rd', class2: 'brd'}
-        ]
-        
-            // Change Class Based on Target's Visibility
-        function intersectionCallback(entries, observer) {
-            entries.forEach(entry => {
-            if (entry.intersectionRatio >= 1) {
-                for (var i= 0; i < intersectionElement.length; i++) {
-                    if (document.getElementById(intersectionElement[i].container).classList.contains(intersectionElement[i].class1)) {
-                        document.getElementById(intersectionElement[i].container).classList.remove(intersectionElement[i].class1);
-                        document.getElementById(intersectionElement[i].container).style.animation = 'none';
-                        document.getElementById(intersectionElement[i].container).offsetHeight;
-                        document.getElementById(intersectionElement[i].container).style.animation = null; 
-                        document.getElementById(intersectionElement[i].container).classList.add(intersectionElement[i].class2);
-                    } 
-                } 
-            } else {
-                for (var i= 0; i < intersectionElement.length; i++) {
-                    document.getElementById(intersectionElement[i].container).classList.remove(intersectionElement[i].class2);
-                    document.getElementById(intersectionElement[i].container).style.animation = 'none';
-                    document.getElementById(intersectionElement[i].container).offsetHeight;
-                    document.getElementById(intersectionElement[i].container).style.animation = null;
-                    document.getElementById(intersectionElement[i].container).classList.add(intersectionElement[i].class1);
-                }
-            }
-          });
-        }
-
-        var observer = new IntersectionObserver(intersectionCallback, intersectionOptions);
-        var target = document.querySelector('#box');
-        observer.observe(target);
-        
-        // Menu Toggle
-        var open = false;
-        var tabletMode = window.matchMedia("(max-width: 937px)");
-        var menuButton = document.getElementById('toggle-menu');
-        function toggleMenu() {
-            open = !open;
-            if (tabletMode.matches) {
-                if (open) {
-                    document.getElementById('side-nav').style.height = '350px';
-                    menuButton.classList.remove('brl');
-                    menuButton.style.animation = 'none';
-                    menuButton.offsetHeight;
-                    menuButton.style.animation = null; 
-                    menuButton.classList.add('rl');
-                } else {
-                    document.getElementById('side-nav').style.height = '65px';
-                    menuButton.classList.remove('rl');
-                    menuButton.style.animation = 'none';
-                    menuButton.offsetHeight;
-                    menuButton.style.animation = null; 
-                    menuButton.classList.add('brl');
-                } 
-            } else {
-                if (open) {
-                    document.getElementById('side-nav').style.width = '200px';
-                    menuButton.style.right = '25px';
-                    menuButton.classList.remove('brl');
-                    menuButton.style.animation = 'none';
-                    menuButton.offsetHeight;
-                    menuButton.style.animation = null; 
-                    menuButton.classList.add('rl');
-                } else {
-                    document.getElementById('side-nav').style.width = '0px';
-                    menuButton.style.right = '-50px';
-                    menuButton.classList.remove('rl');
-                    menuButton.style.animation = 'none';
-                    menuButton.offsetHeight;
-                    menuButton.style.animation = null; 
-                    menuButton.classList.add('brl');
-                }
-            }
-        };
-        
-        // Toggle Nav Between Desktop and Mobile
-        function navToggle() {
-             if (tabletMode.matches) {
-                 document.getElementById('side-nav').style.height = '65px';
-                 document.getElementById('side-nav').style.width = '100%';
-                 menuButton.style.right = 'auto';
-            } else {
-                document.getElementById('side-nav').style.height = '100%';
-                document.getElementById('side-nav').style.width = '0px';
-                menuButton.style.right = '-50px';
-            }
-        };
-        
-        // Collision Detection
-        function isCollide() {
-            var aRect = document.getElementById('ball').getBoundingClientRect();
-            var bRect = [
-                { pos: 'identities', cla: 'bw1'},
-                { pos: 'web', cla: 'bw2'},
-                { pos: 'offfge', cla: 'bw3'}
-            ];
-
-            for (var i= 0; i < bRect.length; i++) {
-                if (
-                    ((aRect.top + aRect.height) < (document.getElementById(bRect[i].pos).getBoundingClientRect().top)) ||
-                    (aRect.top > (document.getElementById(bRect[i].pos).getBoundingClientRect().top + document.getElementById(bRect[i].pos).getBoundingClientRect().height)) ||
-                    ((aRect.left + aRect.width) < document.getElementById(bRect[i].pos).getBoundingClientRect().left) ||
-                    (aRect.left > (document.getElementById(bRect[i].pos).getBoundingClientRect().left + document.getElementById(bRect[i].pos).getBoundingClientRect().width)) //Checks if Elements are not touching
-                ) {
-                    document.getElementById(bRect[i].pos).classList.add(bRect[i].cla);
-                } else {
-                    if (document.getElementById(bRect[i].pos).classList.contains(bRect[i].cla)) {
-                        document.getElementById(bRect[i].pos).classList.remove(bRect[i].cla);
-                    }
-                }
-            }
-        };
-       
-       // Draws SVG Based off Div Positions
-       function drawSVG() {
-           var pt1 = document.getElementById('pt1').getBoundingClientRect();
-           var points = [
-                { c1: 'c1', c2: 'c2', pt2: 'pt2' },
-                { c1: 'c3', c2: 'c4', pt2: 'pt3' },
-                { c1: 'c5', c2: 'c6', pt2: 'pt4' },
-                { c1: 'c7', c2: 'c8', pt2: 'pt5' },
-                { c1: 'c9', c2: 'c10', pt2: 'pt6' },
-                { c1: 'c11', c2: 'c12', pt2: 'pt7' },
-                { c1: 'c13', c2: 'c14', pt2: 'pt8' }
-            ];
-           
-           var pointsOutput = " ";
-           for (var i = 0; i < points.length; i++) {
-               pointsOutput += ' C'+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].c1).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].c1).getBoundingClientRect().top + window.pageYOffset))+' '+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].c2).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].c2).getBoundingClientRect().top + window.pageYOffset))+' '+((document.getElementById(points[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(points[i].pt2).getBoundingClientRect().left + window.pageXOffset))+','+((document.getElementById(points[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(points[i].pt2).getBoundingClientRect().top + window.pageYOffset))
-           }
-           
-           document.getElementById('rail-path').setAttribute('d', 'M'+((pt1.width / 2) + (pt1.left + window.pageXOffset))+','+((pt1.height / 2) + (pt1.top + window.pageYOffset))+pointsOutput);
-        };
-
-        // Update dot position when we get a scroll event.
-        window.addEventListener("scroll", () => {
-            requestAnimationFrame(positionTheDot);
-            requestAnimationFrame(isCollide);
-            dot.style.transition=('100ms ease-out');
-            if (open) { toggleMenu(); }
-        });
-
-        // Update dot position when we get a resize event.
-        window.addEventListener("resize", () => {
-            requestAnimationFrame(drawSVG);
-            requestAnimationFrame(positionTheDot);
-            requestAnimationFrame(isCollide);
-            requestAnimationFrame(navToggle);
-            if (open) { toggleMenu(); }
-        });
-        
-        // Set the initial position of the dot.
-        requestAnimationFrame(drawSVG);
-        requestAnimationFrame(positionTheDot);
-//        window.addEventListener('load', function () {
-//            drawSVG();
-//            positionTheDot();
-//        })
-        
-        // Draws Connecting Lines Between Points and Handles 
-        function drawLines() {
-        var pathHandles = [
-                { c1: 'c1', pt1: 'pt1' },
-                { c1: 'c2', pt1: 'pt2' },
-                { c1: 'c3', pt1: 'pt2' },
-                { c1: 'c4', pt1: 'pt3' },
-                { c1: 'c5', pt1: 'pt3' },
-                { c1: 'c6', pt1: 'pt4' },
-                { c1: 'c7', pt1: 'pt4' },
-                { c1: 'c8', pt1: 'pt5' },
-                { c1: 'c9', pt1: 'pt5' },
-                { c1: 'c10', pt1: 'pt6' },
-                { c1: 'c11', pt1: 'pt6' },
-                { c1: 'c12', pt1: 'pt7' },
-                { c1: 'c13', pt1: 'pt7' },
-                { c1: 'c14', pt1: 'pt8' }
-            ];
-        for (var i = 0; i < pathHandles.length; i++) {
-            document.getElementById('path'+(i+1)).setAttribute('x1', (document.getElementById(pathHandles[i].c1).getBoundingClientRect().width / 2) + (document.getElementById(pathHandles[i].c1).getBoundingClientRect().left + window.pageXOffset));
-            document.getElementById('path'+(i+1)).setAttribute('y1', (document.getElementById(pathHandles[i].c1).getBoundingClientRect().height / 2) + (document.getElementById(pathHandles[i].c1).getBoundingClientRect().top + window.pageYOffset));
-            document.getElementById('path'+(i+1)).setAttribute('x2', (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().width / 2) + (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().left + window.pageXOffset));
-            document.getElementById('path'+(i+1)).setAttribute('y2', (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().height / 2) + (document.getElementById(pathHandles[i].pt1).getBoundingClientRect().top + window.pageYOffset));
-            }
-        };
-        
-        // Drag Points
-        var selected = null, // Object of the element to be moved
-        x_pos = 0, y_pos = 0, // Stores x & y coordinates of the mouse pointer
-        x_elem = 0, y_elem = 0; // Stores top, left values (edge) of the element
-
-            // Start of Element Dragging
-        function _drag_init(elem) {
-            selected = elem;
-            x_elem = x_pos - selected.offsetLeft;
-            y_elem = y_pos - selected.offsetTop;
-        }
-
-            // Element Dragging
-        function _move_elem(e) {
-            var bounds = document.getElementById("wrapper").getBoundingClientRect();
-            var boundsPadding = document.body.getBoundingClientRect();
-            x_pos = document.all ? window.event.clientX : e.pageX;
-            y_pos = e.pageY;
-            if (selected !== null) {
-                selected.style.left = ((x_pos - bounds.left - (0.08 * boundsPadding.width)) / (bounds.width - (0.16 * boundsPadding.width)) * 100) + '%';
-                selected.style.top = ((y_pos/window.innerHeight)*100) + 'vh';
-                drawSVG();
-                positionTheDot();
-                drawLines();
-            }
-        }
-
-            // Destroy the Object
-        function _destroy() {
-            selected = null;
-        }
-
-            // Bind the Functions
-        var anchors = ['c1','pt1','c2','pt2','c3','c4','pt3','c5','c6','pt4','c7','c8','pt5','c9','c10','pt6','c11','c12','pt7','c13','c14','pt8'];
-        for (var i = 0; i < anchors.length; i++) {
-            document.getElementById(anchors[i]).onmousedown = function () {
-                _drag_init(this);
-                return false;
-            }
-            document.getElementById(anchors[i]).ontouchstart = function () {
-                _drag_init(this);
-                return false;
-            }
-        };
-
-        // Toggle Edit Mode
-        var edit = false;
-        function editPath() {
-            edit = !edit;
-            selected = null;
-            if (edit) {
-                document.getElementById('rail-container').style.visibility='visible';
-                document.onmousemove = _move_elem;
-                document.onmouseup = _destroy;
-                document.ontouchmove = _move_elem;
-                document.ontouchend = _destroy;
-                drawLines();
-                window.addEventListener('resize', drawLines);
-            } else {
-                document.getElementById('rail-container').style.visibility='hidden';
-                document.onmousemove = null;
-                document.ontouchmove = null;
-                window.removeEventListener('resize', drawLines);
-            }
-        };
-    </script>
+<script type="text/javascript" src="scripts/hp.svg.animation.js"></script>
+<script type="text/javascript" src="scripts/menu.js"></script>
 
 </body>
 </html>
