@@ -288,7 +288,6 @@ h1 {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
-    transition-timing-function: ease;
 } 
 
 .content {
@@ -396,9 +395,17 @@ h1 {
        overflow-x: hidden !important;
     }
     
-        #c2 { position: absolute; left: 100%; top: 105vh; }
-        #pt2 { position: absolute; left: 85%; top: 90vh; }
-        #c3 { position: absolute; left: 70%; top: 75vh; }
+        #c2 { position: absolute; left: 100%; top: 98vh; }
+        #pt2 { position: absolute; left: 85%; top: 83vh; }
+        #c3 { position: absolute; left: 70%; top: 68vh; }
+    
+        #c4 { position: absolute; left: 75%; top: 105vh; }
+        #pt3 { position: absolute; left: 50%; top: 105vh; }
+        #c5 { position: absolute; left: 25%; top: 105vh; }
+    
+        #c6 { position: absolute; left: 5%; top: 115vh; }
+        #pt4 { position: absolute; left: 5%; top: 140vh; }
+        #c7 { position: absolute; left: 5%; top: 165vh; }
     
         #c8 { position: absolute; left: 20%; top: 175vh; }
         #pt5 { position: absolute; left: 50%; top: 175vh; }
