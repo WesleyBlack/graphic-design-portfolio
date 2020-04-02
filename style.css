@@ -127,6 +127,7 @@ h1 {
     height: 100%;
     top: 0;
     right: 0;
+    transform: rotateX(0deg);
     transition: 0.5s;
 }
 
