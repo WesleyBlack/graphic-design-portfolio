@@ -378,11 +378,13 @@ h1:not(.selected) {
 @media screen and (max-width: 850px) {
     .identities {
         grid-template-columns: 1fr;
+        grid-row-gap: 2vh;
     }
     
     .identities .work-info:nth-child(1), .identities .work-info:nth-child(3), .identities .work-info:nth-child(5) {
         width: 100%;
         grid-template-columns: 1fr;
+        margin-top: 2vh;
     }
     
     p {
