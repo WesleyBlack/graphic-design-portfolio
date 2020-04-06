@@ -222,7 +222,7 @@ p {
     transform: translate(-3px, -3px);
     background: white;
     z-index: 2;
-    cursor: url('images/icons/select.svg'),auto;
+    cursor: url('../images/icons/select.svg'),auto;
 }
 
 .handle {
@@ -232,7 +232,7 @@ p {
     background: #5382F7;
     border-radius: 50%;
     z-index: 2;
-    cursor: url('images/icons/select.svg'),auto;
+    cursor: url('../images/icons/select.svg'),auto;
 }
 
 .point:after, .handle:after {
