@@ -343,6 +343,12 @@ h1:not(.selected) {
     }
 }
 
+@media screen and (max-width: 508px) {
+    h1 {
+        font-size: 18vw;
+    }
+}
+
 /****** CSS Animations ******/
 
 /* Rotate Left */
