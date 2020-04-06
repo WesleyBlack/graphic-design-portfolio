@@ -1,6 +1,6 @@
 // Menu Toggle
 var open = false;
-var tabletMode = window.matchMedia("(max-width: 937px)");
+var tabletMode = window.matchMedia('(max-width: 937px)');
 var menuButton = document.getElementById('toggle-menu');
 var sideNav = document.getElementById('side-nav');
 function toggleMenu() {
@@ -63,3 +63,23 @@ window.addEventListener('resize', () => {
     window.requestAnimationFrame(navToggle);
     if (open) { toggleMenu(); }
 });
+
+// Close Nav Before Going to Link
+const links = document.querySelectorAll('#links a');
+
+for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (event) {
+        var url = event.target.href;
+    
+        event.preventDefault();
+    
+        if (open) { 
+            toggleMenu();
+            setTimeout(function() {
+                window.location = url;
+            }, 500);
+        } else {
+            window.location = url;
+        }
+    });
+};
