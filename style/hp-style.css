@@ -479,7 +479,7 @@ a {
     
     .relative {
         align-self: center;
-        z-index: -1;
+        z-index: 0;
     }
     
     .hp-section {
@@ -494,6 +494,7 @@ a {
         top: 10vh;
         right: -40px;
         margin: 0 0;
+        z-index: 1;
         transform-origin: right bottom;
         transform: rotate(-90deg);
     }
