@@ -38,6 +38,10 @@ p {
     color: #888;
 }
 
+a {
+    text-decoration: none;
+}
+
 .selected {
     display: inline-block;
     background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
@@ -65,7 +69,6 @@ h1:not(.selected) {
     background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    cursor: pointer;
 }
 
 .categories {
@@ -75,7 +78,8 @@ h1:not(.selected) {
 }
 
 .content {
-    overflow: hidden !important;
+    position: relative;
+/*    overflow: hidden !important;*/
     -moz-animation: fade-in-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     -webkit-animation: fade-in-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -83,6 +87,7 @@ h1:not(.selected) {
 }
 
 .identities {
+    top: 0;
     display: inline-grid;
     grid-template-columns: 2.5fr 1fr;
     align-items: center;
@@ -90,13 +95,55 @@ h1:not(.selected) {
     grid-row-gap: 5vh;
 }
 
-/*
-.work-info {
+.show {
+    display: inline-grid;
+    position: relative;
+    pointer-events: inherit;
+    left: 0;
+    -moz-animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation-delay: 0.5s;
+}
+
+.hide {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    -moz-animation: fade-in-right 0.4s reverse cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: fade-in-right 0.4s reverse cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-right 0.4s reverse cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.web {
+    top: 0;
+    display: inline-grid;
+    grid-template-columns: 1fr 2.5fr;
+    align-items: center;
+    margin: 10vh 0;
+    grid-row-gap: 5vh;
+}
+
+.web .work-info:nth-child(2) {
     display: inline-grid;
     grid-template-columns: 2fr 1fr;
     width: 90%;
+    margin-left: 10%;
 }
-*/
+
+.web .work-info:nth-child(4) {
+    display: inline-grid;
+    grid-template-columns: 2fr 1fr;
+    width: 70%;
+    margin-left: 10%;
+}
+
+.web .work-info:nth-child(6) {
+    display: inline-grid;
+    grid-template-columns: 2fr 1fr;
+    width: 84%;
+    margin-left: 10%;
+}
 
 .identities .work-info:nth-child(1) {
     display: inline-grid;

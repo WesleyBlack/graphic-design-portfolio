@@ -32,14 +32,37 @@
           </div>
       </div>
       <div class="categories" id="categories">
-          <h1 class="selected">Identities</h1>
-          <h1>Web Design</h1>
-          <h1>Other</h1>
+          <a href="#identities"><h1 class="selected">Identities</h1></a>
+          <a href="#web-design"><h1>Web Design</h1></a>
+          <a href="#other"><h1>Other</h1></a>
       </div>
     </nav>
     
+    <!-- Page Content -->
     <div class = content>
-        <div class="identities">
+        <div class="identities show" id="logos">
+            <div class="work-info"><h2>Games @ the Library</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+            <img src="images/portfolio/identities/games-ppb.jpg" alt="Logo" class="work">
+            
+            <div class="work-info"><h2>Bianchi Bella’s</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+            <img src="images/portfolio/identities/bianchi-ppb.jpg" alt="Logo" class="work">
+            
+            <div class="work-info"><h2>ECoast</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+            <img src="images/portfolio/identities/ecoast-ppb.jpg" alt="Logo" class="work">
+        </div>
+        
+        <div class="web hide" id="web">
+            <img src="images/portfolio/identities/ecoast-ppb.jpg" alt="Logo" class="work">
+            <div class="work-info"><h2>Games @ the Library</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+            
+            <img src="images/portfolio/identities/bianchi-ppb.jpg" alt="Logo" class="work">
+            <div class="work-info"><h2>Bianchi Bella’s</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+            
+            <img src="images/portfolio/identities/ecoast-ppb.jpg" alt="Logo" class="work">
+            <div class="work-info"><h2>ECoast</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
+        </div>
+        
+        <div class="identities hide" id="more">
             <div class="work-info"><h2>Games @ the Library</h2><p class="button">Learn More →</p><div class="work-line"></div></div>
             <img src="images/portfolio/identities/games-ppb.jpg" alt="Logo" class="work">
             
@@ -53,24 +76,7 @@
  </div>
  
  <script type="text/javascript" src="scripts/menu.js"></script>
- <script type="text/javascript">
-    var smallDisplay = window.matchMedia('(max-width: 508px)');
-    var target = document.getElementById('categories').childNodes;
-     
-    function toggleText() {
-        if (smallDisplay.matches) {
-            target[3].innerHTML = 'Web';
-        } else {
-            target[3].innerHTML = 'Web Design';
-        }
-    };
-     
-    toggleText();
-     
-    window.addEventListener('resize', () => {
-        toggleText();
-    });
- </script>
+ <script type="text/javascript" src="scripts/p-content.filter.js"></script>
  
 </body>
 </html>
