@@ -86,7 +86,7 @@ h1:not(.selected) {
     animation-delay: 1s;
 }
 
-.identities {
+.left {
     top: 0;
     display: inline-grid;
     grid-template-columns: 2.5fr 1fr;
@@ -115,7 +115,7 @@ h1:not(.selected) {
     animation: fade-in-right 0.4s reverse cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-.web {
+.right {
     top: 0;
     display: inline-grid;
     grid-template-columns: 1fr 2.5fr;
@@ -124,40 +124,23 @@ h1:not(.selected) {
     grid-row-gap: 5vh;
 }
 
-.web .work-info:nth-child(2) {
-    display: inline-grid;
-    grid-template-columns: 2fr 1fr;
-    width: 90%;
+.right .work-info {
     margin-left: 10%;
 }
 
-.web .work-info:nth-child(4) {
-    display: inline-grid;
-    grid-template-columns: 2fr 1fr;
-    width: 70%;
-    margin-left: 10%;
-}
-
-.web .work-info:nth-child(6) {
-    display: inline-grid;
-    grid-template-columns: 2fr 1fr;
-    width: 84%;
-    margin-left: 10%;
-}
-
-.identities .work-info:nth-child(1) {
+.left .work-info:nth-child(1), .right .work-info:nth-child(2) {
     display: inline-grid;
     grid-template-columns: 2fr 1fr;
     width: 90%;
 }
 
-.identities .work-info:nth-child(3) {
+.left .work-info:nth-child(3), .right .work-info:nth-child(4) {
     display: inline-grid;
     grid-template-columns: 2fr 1fr;
     width: 70%;
 }
 
-.identities .work-info:nth-child(5) {
+.left .work-info:nth-child(5), .right .work-info:nth-child(6) {
     display: inline-grid;
     grid-template-columns: 2fr 1fr;
     width: 84%;
@@ -376,18 +359,11 @@ h1:not(.selected) {
 }
 
 @media screen and (max-width: 850px) {
-    .identities {
+    .left, .right {
         grid-template-columns: 1fr;
-        grid-row-gap: 2vh;
     }
     
-    .identities .work-info:nth-child(1), .identities .work-info:nth-child(3), .identities .work-info:nth-child(5) {
-        width: 100%;
-        grid-template-columns: 1fr;
-        margin-top: 2vh;
-    }
-    
-    p {
+    .left .work-info:nth-child(1), .left .work-info:nth-child(3), .left .work-info:nth-child(5), .right .work-info:nth-child(2), .right .work-info:nth-child(4), .right .work-info:nth-child(6), p {
         display: none;
     }
 }

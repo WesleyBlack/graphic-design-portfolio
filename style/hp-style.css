@@ -303,6 +303,7 @@ a {
 
 .flex-end .button-end {
     align-self: flex-end;
+    margin-top: 12px;
 }
 
 .section-type {
@@ -510,7 +511,7 @@ a {
     
     h1 {
         white-space: nowrap;
-        font-size: 11vh;
+        font-size: 14vh;
     }
     
     .flex-start {
