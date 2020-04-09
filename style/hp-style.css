@@ -277,21 +277,17 @@ a {
     #pt8 { position: absolute; left: 5%; top: 350vh; }
 
 .section {
-    max-height: 100%;
-}
-
-.section .spacer {
     height: 100vh;
 }
 
 .flex-start {
-    max-height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: flex-start;
 }
 
 .flex-end {
-    max-height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: flex-end;
 }
