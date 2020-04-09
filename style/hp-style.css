@@ -296,6 +296,15 @@ a {
     text-align: right;
 }
 
+.flex-end .section-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-end .button-end {
+    align-self: flex-end;
+}
+
 .section-type {
     margin: 23vh 5%;
 }
