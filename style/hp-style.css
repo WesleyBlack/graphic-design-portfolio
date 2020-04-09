@@ -277,17 +277,20 @@ a {
     #pt8 { position: absolute; left: 5%; top: 350vh; }
 
 .section {
-    height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
 }
 
 .flex-start {
-    height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-start;
 }
 
 .flex-end {
-    height: 100vh;
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-end;
 }

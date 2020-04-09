@@ -157,6 +157,8 @@ h1 {
     max-width: 950px;
     margin: auto;
     padding: 0 8% 0 8%;
+    min-height: -webkit-fill-available;
+    min-height: 100vh
 }
 
 .menu-button, .menu-close {
@@ -244,7 +246,7 @@ h1 {
         transform: translate(50%, 50%);
         transform-origin: center left;
         transform: rotate(-90deg);
-        top: 84vh;
+        top: 84%;
     }
 }
 
