@@ -157,8 +157,6 @@ h1 {
     max-width: 950px;
     margin: auto;
     padding: 0 8% 0 8%;
-    min-height: -webkit-fill-available;
-    min-height: 100vh
 }
 
 .menu-button, .menu-close {
@@ -243,10 +241,12 @@ h1 {
 @media screen and (max-width: 550px) {
     .email {
         font-size: 6vh;
+        font-size: calc(var(--vh, 1vh) * 6);
         transform: translate(50%, 50%);
         transform-origin: center left;
         transform: rotate(-90deg);
-        top: 84%;
+        top: 84vh;
+        top: calc(var(--vh, 1vh) * 84);
     }
 }
 

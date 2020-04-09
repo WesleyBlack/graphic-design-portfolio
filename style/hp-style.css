@@ -277,20 +277,20 @@ a {
     #pt8 { position: absolute; left: 5%; top: 350vh; }
 
 .section {
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .flex-start {
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     justify-content: flex-start;
 }
 
 .flex-end {
-    min-height: -webkit-fill-available;
-    min-height: 100vh;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     justify-content: flex-end;
 }
