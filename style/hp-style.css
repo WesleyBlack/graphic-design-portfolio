@@ -429,8 +429,6 @@ a {
        overflow-x: hidden !important;
     }
     
-        #pt1 { position: absolute; left: 50%; top: 50vh; top: calc(var(--vh, 1vh) * 50); }
-        
         #c2 { position: absolute; left: 100%; top: 98vh; }
         #pt2 { position: absolute; left: 85%; top: 83vh; }
         #c3 { position: absolute; left: 70%; top: 68vh; }
@@ -503,7 +501,7 @@ a {
     
     .section-type {
         position: absolute;
-        top: 10vh;
+        top: 11vh;
         right: calc(-8% - 10px);
         margin: 0 0;
         z-index: 1;
@@ -526,7 +524,7 @@ a {
     
     .flex-end .section-type {
         position: absolute;
-        bottom: 10vh;
+        bottom: 7vh;
         left: calc(-8% - 2px);
         margin: 0 0;
         transform-origin: left top;
