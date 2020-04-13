@@ -374,7 +374,7 @@ h1:not(.selected) {
 }
 
 @media screen and (max-width: 508px) {
-    h1 {
+    .categories h1 {
         font-size: 18vw;
     }
 }
