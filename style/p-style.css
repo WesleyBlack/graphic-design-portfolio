@@ -15,12 +15,15 @@ body {
     opacity: 0.7;
 }
 
-h1 {
+.categories h1 {
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
     font-size: 5em;
     line-height: 1.1em;
-    color: #fff;
+    background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,1);
+    transition: 0.3s;
 }
 
 h2 {
@@ -42,11 +45,11 @@ a {
     text-decoration: none;
 }
 
-.selected {
+.categories .selected {
     display: inline-block;
     background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgba(255,255,255,0);
     -moz-animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     -webkit-animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -61,14 +64,16 @@ h1:not(.selected) {
 
 .categories:hover h1 {
     background: none;
-    -webkit-text-fill-color: #fff;
+    background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,1);
 }
 
 .categories h1:hover {
     display: inline-block;
     background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: rgba(255,255,255,0);
 }
 
 .categories {

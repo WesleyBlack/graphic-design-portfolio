@@ -429,28 +429,28 @@ a {
        overflow-x: hidden !important;
     }
     
-        #c2 { position: absolute; left: 100%; top: 98vh; }
-        #pt2 { position: absolute; left: 85%; top: 83vh; }
-        #c3 { position: absolute; left: 70%; top: 68vh; }
+        #c2 { position: absolute; left: 100%; top: 98vh; top: calc(var(--vh, 1vh) * 98); }
+        #pt2 { position: absolute; left: 85%; top: 83vh; top: calc(var(--vh, 1vh) * 83); }
+        #c3 { position: absolute; left: 70%; top: 68vh; top: calc(var(--vh, 1vh) * 68); }
     
-        #c4 { position: absolute; left: 75%; top: 105vh; }
-        #pt3 { position: absolute; left: 50%; top: 105vh; }
-        #c5 { position: absolute; left: 25%; top: 105vh; }
+        #c4 { position: absolute; left: 75%; top: 105vh; top: calc(var(--vh, 1vh) * 105); }
+        #pt3 { position: absolute; left: 50%; top: 105vh; top: calc(var(--vh, 1vh) * 105); }
+        #c5 { position: absolute; left: 25%; top: 105vh; top: calc(var(--vh, 1vh) * 105); }
     
-        #c6 { position: absolute; left: 5%; top: 115vh; }
-        #pt4 { position: absolute; left: 5%; top: 140vh; }
-        #c7 { position: absolute; left: 5%; top: 165vh; }
+        #c6 { position: absolute; left: 5%; top: 115vh; top: calc(var(--vh, 1vh) * 115); }
+        #pt4 { position: absolute; left: 5%; top: 140vh; top: calc(var(--vh, 1vh) * 140); }
+        #c7 { position: absolute; left: 5%; top: 165vh; top: calc(var(--vh, 1vh) * 165); }
     
-        #c8 { position: absolute; left: 20%; top: 175vh; }
-        #pt5 { position: absolute; left: 50%; top: 175vh; }
-        #c9 { position: absolute; left: 80%; top: 175vh; }
+        #c8 { position: absolute; left: 20%; top: 175vh; top: calc(var(--vh, 1vh) * 175); }
+        #pt5 { position: absolute; left: 50%; top: 175vh; top: calc(var(--vh, 1vh) * 175); }
+        #c9 { position: absolute; left: 80%; top: 175vh; top: calc(var(--vh, 1vh) * 175); }
     
-        #c12 { position: absolute; left: 0%; top: 325vh; }
-        #pt7 { position: absolute; left: 25%; top: 300vh; }
-        #c13 { position: absolute; left: 50%; top: 275vh; }
+        #c12 { position: absolute; left: 0%; top: 325vh; top: calc(var(--vh, 1vh) * 325); }
+        #pt7 { position: absolute; left: 25%; top: 300vh; top: calc(var(--vh, 1vh) * 300); }
+        #c13 { position: absolute; left: 50%; top: 275vh; top: calc(var(--vh, 1vh) * 275); }
     
-        #c14 { position: absolute; left: 60%; top: 325vh; }
-        #pt8 { position: absolute; left: 5%; top: 355vh; }
+        #c14 { position: absolute; left: 60%; top: 325vh; top: calc(var(--vh, 1vh) * 325); }
+        #pt8 { position: absolute; left: 5%; top: 355vh; top: calc(var(--vh, 1vh) * 355); }
     
     .nav-icon {
         left: calc(50vw - 12.5px);
