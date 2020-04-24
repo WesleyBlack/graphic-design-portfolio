@@ -49,7 +49,7 @@ function isCollide() {
 };
 
 var scrollY = 0;
-var speed = 0.1;
+var speed = 0.08;
 var path = document.getElementById('rail-path');
 var pathLen = 0;
 
