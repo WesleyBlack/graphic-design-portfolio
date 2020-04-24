@@ -114,7 +114,7 @@ var target = document.querySelector('#box');
 observer.observe(target);
 
 // Update dot position when we get a resize event.
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
     drawSVG();
     pathLength();
 //    window.requestAnimationFrame(positionTheDot);
