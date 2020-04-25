@@ -1,6 +1,6 @@
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(f){return setTimeout(f, 1000/60)}
         
-var dot = document.getElementById('flipper');
+var ball = document.getElementById('flipper');
         
 // Draws SVG Based off Div Positions
 function drawSVG() {
@@ -48,6 +48,7 @@ function isCollide() {
     }
 };
 
+// Ball Animation Initial Settings
 var scrollY = 0;
 var speed = 0.08;
 var path = document.getElementById('rail-path');
@@ -57,8 +58,8 @@ function pathLength() {
     pathLen = path.getTotalLength();
 };
     
-// Position the Dot on the SVG Path
-function positionTheDot() {
+// Position the Ball on the SVG Path
+function positionTheBall() {
     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     
     var distY = scrollPercentage - scrollY;
@@ -69,11 +70,11 @@ function positionTheDot() {
             
     var pty = pt.y - document.documentElement.scrollTop;
   
-    dot.style.webkitTransform=('translate3d('+ pt.x + 'px , ' + pty + 'px, 0px');
+    ball.style.webkitTransform=('translate3d('+ pt.x + 'px , ' + pty + 'px, 0px');
             
     isCollide();
     
-    window.requestAnimationFrame(positionTheDot);
+    window.requestAnimationFrame(positionTheBall);
 };
         
 // Logo/Ball Flipper
@@ -113,17 +114,16 @@ var observer = new IntersectionObserver(intersectionCallback, intersectionOption
 var target = document.querySelector('#box');
 observer.observe(target);
 
-// Update dot position when we get a resize event.
+// Update ball position when we get a resize event.
 window.addEventListener('resize', () => {
     drawSVG();
     pathLength();
-//    window.requestAnimationFrame(positionTheDot);
 });
         
-// Set the initial position of the dot.
+// Set the initial position of the ball.
 drawSVG();
 pathLength();
-positionTheDot();
+positionTheBall();
         
 ////// EDIT MODE //////
         
@@ -180,7 +180,7 @@ function _move_elem(e) {
     }
 };
 
-// Destroy the Object
+// Removes Bind
 function _destroy() {
     selected = null;
 };
