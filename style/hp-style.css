@@ -281,13 +281,13 @@ a {
 }
 
 .flex-start {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
 }
 
 .flex-end {
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: flex-end;
 }
