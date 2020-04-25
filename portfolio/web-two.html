@@ -70,9 +70,19 @@
         },900);
      };
      
-     window.addEventListener('resize', () => {
-         replayAd();
-     });
+     document.addEventListener('DOMContentLoaded', function() {
+        // Set the Initial Width
+        var windowWidth = window.innerWidth
+
+        window.addEventListener("resize", function() {
+            //Checks if Width has Changed
+            if (window.innerWidth != windowWidth) {
+                windowWidth = window.innerWidth
+                replayAd();
+            }
+        })
+
+     })
      
      adDelay();
  </script>
