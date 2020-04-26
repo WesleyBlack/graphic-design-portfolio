@@ -90,7 +90,7 @@ function positionTheBall() {
   
     var pt = path.getPointAtLength(scrollY * pathLen);
             
-    var pty = pt.y - document.documentElement.scrollTop;
+    var pty = pt.y - (document.documentElement.scrollTop + document.body.scrollTop);
   
     ball.style.webkitTransform=('translate3d('+ pt.x + 'px , ' + pty + 'px, 0px');
             
