@@ -1,8 +1,4 @@
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function(f){return setTimeout(f, 1000/60)}
-
-// Set Section Image Margin Based on Image Height
-let vhMargin = document.getElementById('identities').height;
-document.documentElement.style.setProperty('--vhMargin', `${vhMargin}px`);
         
 var ball = document.getElementById('flipper');
         
@@ -122,8 +118,6 @@ observer.observe(target);
 window.addEventListener('resize', () => {
     drawSVG();
     pathLength();
-    let vhMargin = document.getElementById('identities').height;
-    document.documentElement.style.setProperty('--vhMargin', `${vhMargin}px`);
 });
         
 // Set the initial position of the ball.
