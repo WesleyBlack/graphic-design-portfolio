@@ -53,6 +53,7 @@ var scrollY = 0;
 var speed = 0.08;
 var path = document.getElementById('rail-path');
 var pathLen = 0;
+var content = document.getElementById('content');
 
 function pathLength() {
     pathLen = path.getTotalLength();
@@ -61,6 +62,27 @@ function pathLength() {
 // Position the Ball on the SVG Path
 function positionTheBall() {
     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    
+    // Logo/Ball Flipper
+    if (scrollPercentage == 0) {
+        if (content.classList.contains('rsd')) {
+            content.classList.remove('rsd');
+            content.style.animation = 'none';
+            content.offsetHeight;
+            content.style.animation = null; 
+            content.classList.add('brsd');
+        }
+    } else {
+        if (content.classList.contains('brsd')) {
+            content.classList.remove('brsd');
+            content.style.animation = 'none';
+            content.offsetHeight;
+            content.style.animation = null;
+            content.classList.add('rsd');
+        } else {
+            content.classList.add('rsd');
+        }
+    };
     
     var distY = scrollPercentage - scrollY;
     
@@ -76,43 +98,6 @@ function positionTheBall() {
     
     window.requestAnimationFrame(positionTheBall);
 };
-        
-// Logo/Ball Flipper
-var intersectionOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 1.0
-};
-var intersectionElement = ['content', 'nav-flipper'];
-        
-// Change Class Based on Target's Visibility
-function intersectionCallback(entries, observer) {
-    entries.forEach(entry => {
-    if (entry.intersectionRatio >= 1) {
-        for (var i= 0; i < intersectionElement.length; i++) {
-            if (document.getElementById(intersectionElement[i]).classList.contains('rsd')) {
-                document.getElementById(intersectionElement[i]).classList.remove('rsd');
-                document.getElementById(intersectionElement[i]).style.animation = 'none';
-                document.getElementById(intersectionElement[i]).offsetHeight;
-                document.getElementById(intersectionElement[i]).style.animation = null; 
-                document.getElementById(intersectionElement[i]).classList.add('brsd');
-            } 
-        } 
-    } else {
-        for (var i= 0; i < intersectionElement.length; i++) {
-            document.getElementById(intersectionElement[i]).classList.remove('brsd');
-            document.getElementById(intersectionElement[i]).style.animation = 'none';
-            document.getElementById(intersectionElement[i]).offsetHeight;
-            document.getElementById(intersectionElement[i]).style.animation = null;
-            document.getElementById(intersectionElement[i]).classList.add('rsd');
-        }
-    }
-    });
-}
-
-var observer = new IntersectionObserver(intersectionCallback, intersectionOptions);
-var target = document.querySelector('#box');
-observer.observe(target);
 
 // Update ball position when we get a resize event.
 window.addEventListener('resize', () => {
