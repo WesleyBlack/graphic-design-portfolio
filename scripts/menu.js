@@ -1,7 +1,3 @@
-// Set vh to window.innerHeight
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 // Menu Toggle
 var open = false;
 var tabletMode = window.matchMedia('(max-width: 937px)');
@@ -66,8 +62,6 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', () => {
     window.requestAnimationFrame(navToggle);
     if (open) { toggleMenu(); }
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 // Close Nav Before Going to Link
