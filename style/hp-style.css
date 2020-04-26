@@ -302,10 +302,6 @@ a {
     margin: 25vh 5%;
 }
 
-.section-bug-fix {
-     height: calc(100vh - 3px);
-}
-
 .bug-fix {
     height: 3px;
 }
