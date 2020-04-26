@@ -53,7 +53,7 @@ var scrollY = 0;
 var speed = 0.08;
 var path = document.getElementById('rail-path');
 var pathLen = 0;
-var content = document.getElementById('content');
+var logoFlippers = ['content', 'nav-flipper'];
 
 function pathLength() {
     pathLen = path.getTotalLength();
@@ -64,23 +64,25 @@ function positionTheBall() {
     var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     
     // Logo/Ball Flipper
-    if (scrollPercentage == 0) {
-        if (content.classList.contains('rsd')) {
-            content.classList.remove('rsd');
-            content.style.animation = 'none';
-            content.offsetHeight;
-            content.style.animation = null; 
-            content.classList.add('brsd');
-        }
-    } else {
-        if (content.classList.contains('brsd')) {
-            content.classList.remove('brsd');
-            content.style.animation = 'none';
-            content.offsetHeight;
-            content.style.animation = null;
-            content.classList.add('rsd');
+    for (var i = 0; i < logoFlippers.length; i++) {
+        if (scrollPercentage <= 0.005) {
+            if (document.getElementById(logoFlippers[i]).classList.contains('rsd')) {
+                document.getElementById(logoFlippers[i]).classList.remove('rsd');
+                document.getElementById(logoFlippers[i]).style.animation = 'none';
+                document.getElementById(logoFlippers[i]).offsetHeight;
+                document.getElementById(logoFlippers[i]).style.animation = null; 
+                document.getElementById(logoFlippers[i]).classList.add('brsd');
+            }
         } else {
-            content.classList.add('rsd');
+            if (document.getElementById(logoFlippers[i]).classList.contains('brsd')) {
+                document.getElementById(logoFlippers[i]).classList.remove('brsd');
+                document.getElementById(logoFlippers[i]).style.animation = 'none';
+                document.getElementById(logoFlippers[i]).offsetHeight;
+                document.getElementById(logoFlippers[i]).style.animation = null;
+                document.getElementById(logoFlippers[i]).classList.add('rsd');
+            } else {
+                document.getElementById(logoFlippers[i]).classList.add('rsd');
+            }
         }
     };
     
