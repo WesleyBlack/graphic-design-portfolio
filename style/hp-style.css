@@ -281,13 +281,13 @@ a {
 }
 
 .flex-start {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: flex-start;
 }
 
 .flex-end {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: flex-end;
 }
@@ -308,6 +308,14 @@ a {
 
 .section-type {
     margin: 25vh 5%;
+}
+
+.section-bug-fix {
+     height: calc(100vh - 1.5px);
+}
+
+.bug-fix {
+    height: 3px;
 }
 
 /****** Logo/Ball Flipper ******/
@@ -496,7 +504,6 @@ a {
         height: auto;
         max-height: 80vh;
         margin: 10vh 0;
-        margin: calc((100vh - var(--vhMargin)) / 2) 0;
         max-width: 100%;
     }
     
