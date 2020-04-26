@@ -496,6 +496,7 @@ a {
         height: auto;
         max-height: 80vh;
         margin: 10vh 0;
+        margin: calc((100vh - var(--vhMargin)) / 2) 0;
         max-width: 100%;
     }
     
