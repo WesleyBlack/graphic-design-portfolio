@@ -311,7 +311,7 @@ a {
 }
 
 .section-bug-fix {
-     height: calc(100vh - 1.5px);
+     height: calc(100vh - 3px);
 }
 
 .bug-fix {
