@@ -358,7 +358,17 @@ a {
 }
 
 .split-text h4 {
-    margin-top: 20px;
+    margin: 20px 0;
+}
+
+.split-text a {
+    color: #666;
+}
+
+.split-text a:hover {
+    background: -webkit-linear-gradient(180deg, #e459a0, #47c7f0);
+    -webkit-background-clip: text;
+    color: rgba(255,255,255,0);
 }
 
 .split-photos {
