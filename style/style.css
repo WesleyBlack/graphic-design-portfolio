@@ -613,6 +613,16 @@ a {
         top: 84vh;
         top: calc(var(--vh, 1vh) * 84);
     }
+	
+    .work-selector {
+        justify-content: space-between;
+        height: 26vw;
+    }
+    
+    .work-selector img {
+        width: 26vw;
+        margin: 0 0;
+    }
 }
 
 /****** CSS Animations ******/
