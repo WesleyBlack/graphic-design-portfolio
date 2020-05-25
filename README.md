@@ -1,2 +1,2 @@
 # Portfolio
-WIP
+Personal portfolio website showcasing my graphic design work
