@@ -101,7 +101,7 @@ if ("onhashchange" in window) {
 };
     
 // Change Web Design to Web on Smaller Desplays
-var smallDisplay = window.matchMedia('(max-width: 550px)');
+var smallDisplay = window.matchMedia('(min-width: 550px)');
      
 function toggleText() {
     if (smallDisplay.matches) {
