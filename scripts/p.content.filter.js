@@ -105,9 +105,9 @@ var smallDisplay = window.matchMedia('(max-width: 550px)');
      
 function toggleText() {
     if (smallDisplay.matches) {
-        target[3].children[0].innerHTML = 'Web';
-    } else {
         target[3].children[0].innerHTML = 'Web Design';
+    } else {
+        target[3].children[0].innerHTML = 'Web';
     }
 };
      
