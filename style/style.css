@@ -470,14 +470,18 @@ a {
 
 .email {
     position: absolute;
-    top: 50%;
+    top: 84vh;
+    top: calc(var(--vh, 1vh) * 84);
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, 50%);
+    transform-origin: center left;
+    transform: rotate(-90deg);
     background: url(../images/icons/ball.svg) no-repeat center center;
     background-size: 100%, 100%;
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
-    font-size: 5em;
+    font-size: 6vh;
+    font-size: calc(var(--vh, 1vh) * 6);
     line-height: 1.1em;
     text-decoration: none;
     -webkit-background-clip: text;
@@ -514,7 +518,7 @@ a {
 
 /****** Media Queries ******/
 @media screen and (max-width: 1074px) {
-    .email, .split-text h1 {
+    .split-text h1 {
         font-size: 7vw;
     }
 }
@@ -622,16 +626,6 @@ a {
 @media screen and (max-width: 550px) {
     .categories h1 {
         font-size: 18vw;
-    }
-    
-    .email {
-        font-size: 6vh;
-        font-size: calc(var(--vh, 1vh) * 6);
-        transform: translate(50%, 50%);
-        transform-origin: center left;
-        transform: rotate(-90deg);
-        top: 84vh;
-        top: calc(var(--vh, 1vh) * 84);
     }
     
     .work-selector {
